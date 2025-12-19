@@ -2,7 +2,7 @@
 ## Do not modify this file. You will lose the ability to autoupdate!
 
 VERSION="0.0.1"
-CDN="https://raw.githubusercontent.com/Qwizi/cs2-battle-bot/master"
+CDN="https://raw.githubusercontent.com/JohanOstlund/cs2-battle-bot/master"
 
 # If DEPLOY_COOLIFy is true, then use coolify files
 if [ "$DEPLOY_COOLIFY" = "True" ]; then
@@ -11,7 +11,7 @@ if [ "$DEPLOY_COOLIFY" = "True" ]; then
 
 
     # Get app container name
-    APP_CONTAINER_NAME=$(docker ps --filter ancestor=qwizii/cs2-battle-bot-api:latest --filter network=coolify_cs2-battle-bot-network --format "{{.Names}}")
+    APP_CONTAINER_NAME=$(docker ps --filter ancestor=johanostlund/cs2-battle-bot-api:latest --filter network=coolify_cs2-battle-bot-network --format "{{.Names}}")
 
     if [ -z "$APP_CONTAINER_NAME" ]; then
         echo "App container not found. Exiting..."
