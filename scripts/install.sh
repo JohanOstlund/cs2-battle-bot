@@ -7,7 +7,7 @@ set -e # Exit immediately if a command exits with a non-zero status
 set -o pipefail # Cause a pipeline to return the status of the last command that exited with a non-zero status
 
 VERSION="0.0.3"
-CDN="https://raw.githubusercontent.com/Qwizi/cs2-battle-bot/master"
+CDN="https://raw.githubusercontent.com/JohanOstlund/cs2-battle-bot/master"
 OS_TYPE=$(grep -w "ID" /etc/os-release | cut -d "=" -f 2 | tr -d '"')
 
 # Check if the OS is manjaro, if so, change it to arch
