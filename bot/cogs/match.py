@@ -25,7 +25,7 @@ from discord.commands import option
 from discord.ext import commands, tasks
 from redis.client import PubSub
 
-from bot.cogs.utils import create_match_embed, get_servers_list
+from bot.cogs.utils import can_manage_matches, create_match_embed, get_servers_list
 from bot.cogs.views import ConfigureGuildView, LaunchMatchView, MapBanView
 from bot.events.events import (
     OnGoingLiveEvent,
@@ -169,6 +169,14 @@ class MatchCog(commands.Cog):
 
         """
         await ctx.defer()
+        
+        # Check if user can manage matches (owner or has gather-manager role)
+        if not can_manage_matches(ctx.author, ctx.guild.owner_id):
+            await ctx.followup.send(
+                _("error_user_cannot_manage_matches"), ephemeral=True
+            )
+            return
+        
         if not ctx.author.voice:
             await ctx.followup.send(
                 _("error_user_is_not_in_voice_channel"), ephemeral=True

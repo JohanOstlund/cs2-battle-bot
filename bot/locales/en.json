@@ -24,6 +24,7 @@
         "error_user_is_not_leader": "Only leader can do this.",
         "error_user_is_no_author_of_match": "You are not the author of this match.",
         "error_user_is_not_owner": "You are not the owner of this server",
+        "error_user_cannot_manage_matches": "You don't have permission to create matches. You need the gather-manager role.",
         "error_users_not_exists": "Users {} not exists in database.",
         "error_maplist_bo1": "You need to enter only 1 map",
         "error_maplist_bo3": "You need to enter 3 maps"

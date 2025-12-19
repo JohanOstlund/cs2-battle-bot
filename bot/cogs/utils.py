@@ -73,6 +73,33 @@ def create_match_embed(match: Match) -> discord.Embed:
     return embed
 
 
+def can_manage_matches(member: discord.Member, guild_owner_id: int) -> bool:
+    """
+    Check if a member can manage matches.
+
+    A member can manage matches if they are:
+    - The guild owner
+    - Have a role matching MATCH_MANAGER_ROLE setting
+
+    Args:
+    ----
+        member (discord.Member): The member to check.
+        guild_owner_id (int): The guild owner's ID.
+
+    Returns:
+    -------
+        bool: True if the member can manage matches, False otherwise.
+
+    """
+    # Guild owner can always manage matches
+    if member.id == guild_owner_id:
+        return True
+
+    # Check if member has the match manager role
+    role_names = [role.name.lower() for role in member.roles]
+    return settings.MATCH_MANAGER_ROLE.lower() in role_names
+
+
 async def get_servers_list(ctx: discord.AutocompleteContext) -> list[str]:
     """
     Get servers list.

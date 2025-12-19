@@ -23,6 +23,7 @@
         "error_user_is_not_leader": "Nie jestes liderem druzyny.",
         "error_user_is_no_author_of_match": "Nie jestes autorem meczu.",
         "error_user_is_not_owner": "Nie jestes wlascicielem serwera.",
+        "error_user_cannot_manage_matches": "Nie masz uprawnien do tworzenia meczy. Potrzebujesz roli gather-manager.",
         "error_users_not_exists": "Uzytkownicy {} nie istnieja w bazie danych.",
         "error_maplist_bo1": "You need to enter only 1 map",
         "error_maplist_bo3": "You need to enter 3 maps"
